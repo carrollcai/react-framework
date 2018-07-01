@@ -7,6 +7,7 @@
 - react-router4.0
 - mockjs模拟数据
 - 采用axios处理异步请求，充当拦截器的作用
+- webpack采用dll优化，抽取第三方包
 
 ### 安装和启动
 ```
@@ -14,3 +15,7 @@ yarn install
 
 yarn start(会默认启动mock服务)
 ```
+
+未完成功能
+- [] react-router4.0
+- [] dll优化
