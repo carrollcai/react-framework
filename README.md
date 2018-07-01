@@ -17,5 +17,5 @@ yarn start(会默认启动mock服务)
 ```
 
 未完成功能
-- [] react-router4.0
-- [] dll优化
+- [ ] react-router4.0
+- [ ] dll优化
