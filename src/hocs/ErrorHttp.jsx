@@ -23,7 +23,6 @@ export default (WrappedComponent) => {
 
     intercetor() {
       axios.interceptors.response.use(res => {
-        console.log(res);
         if (res.data.errorInfo.code === '-1') {
           this.setState({
             error: true
@@ -31,7 +30,6 @@ export default (WrappedComponent) => {
         }
         return res;
       }, err => {
-        console.log(err);
         this.setState({
           error: true
         });
@@ -41,7 +39,7 @@ export default (WrappedComponent) => {
 
     render() {
       let { error } = this.state;
-      let props = Object.assign(this.props, {
+      let props = Object.assign({}, this.props, {
         ref: this.proc.bind(this)
       })
       return (
