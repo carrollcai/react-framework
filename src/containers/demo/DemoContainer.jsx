@@ -10,6 +10,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   onClick: (id) => dispatch(actions.getDemo(id))
 });
 
+// 实际上，这个组件就是一个HOC
 export default connect(
   mapStateToProps,
   mapDispatchToProps

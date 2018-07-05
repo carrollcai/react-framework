@@ -7,16 +7,18 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 import thunk from 'redux-thunk';
+import ErrorHttp from './hocs/ErrorHttp.jsx';
 
 const store = createStore(
   rootReducer, 
   applyMiddleware(thunk)
 );
+const HocApp = ErrorHttp(App);
 
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <HocApp />
   </Provider>,
   document.getElementById('root'));
 
