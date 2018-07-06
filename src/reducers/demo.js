@@ -1,7 +1,7 @@
 const getDemoReducer = (state = [], action) => {
+  // console.log(action);
   switch (action.type) {
     case 'DEMO':
-    console.log(action);
       return action.list
     default:
       return state

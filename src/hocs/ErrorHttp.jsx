@@ -17,8 +17,8 @@ export default (WrappedComponent) => {
     // 通过refs访问到组件实例
     // ref的回调会在WrappedComponent组件渲染的时候执行，这时候就可以得到WrappedComponent的引用，就可以读取和添加实例的props，调用实例方法。
     proc(WarppedComponentInstance) {
-      console.log(WarppedComponentInstance); // 实例本身
-      console.log(WarppedComponentInstance.method); // 实例方法
+      // console.log(WarppedComponentInstance); // 实例本身
+      // console.log(WarppedComponentInstance.method); // 实例方法
     }
 
     intercetor() {
