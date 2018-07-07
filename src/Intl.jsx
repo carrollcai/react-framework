@@ -20,7 +20,7 @@ class Inter extends Component {
 };
 
 function chooseLocale(val) {
-  let _val = val || navigator.language.split('_')[0]
+  let _val = val || navigator.language.split('_')[0];
   switch (_val) {
     case 'en':
       return en_US;
