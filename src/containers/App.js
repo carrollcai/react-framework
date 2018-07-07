@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Demo from './demo/DemoContainer';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import actions from '../actions/index.js';
 import { connect } from 'react-redux';
 
 class App extends Component {
   changeLanguage() {
-    console.log(this);
-    this.props.changeLanguage('zh');
+    let lang = this.props.locale;
+    lang = lang === 'zh' ? 'en' : 'zh';
+    this.props.changeLanguage(lang);
   }
   render() {
+    const { locale } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -19,22 +20,26 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+
         <FormattedMessage
-          id="hello"
+          id="intl.name"
+          values={{name: <b>{'carroll'}</b>}}
            />
         </p>
-        <button onClick={() => this.changeLanguage()}>切换中文</button>
-        <Demo />
+        <button onClick={() => this.changeLanguage()}>{locale === 'zh' ? '切换英文' : 'change chinese'}</button>
+        
       </div>
     );
   }
 }
 
+const mapStateToProps = (state, ownProps) => ({
+  locale: state.root.language,
+});
 const mapDispatchToProps = (dispatch, ownProps) => ({
   changeLanguage: (val) => dispatch(actions.changeLanguage(val))
 });
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
-)(App);
+)(injectIntl(App));
