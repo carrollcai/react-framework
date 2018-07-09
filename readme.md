@@ -74,3 +74,8 @@ function renderAndCache(ctx, pagePath, noCache, queryParams = null) {
 }
 
 ```
+
+### ssr的本质
+react中能实现ssr主要依赖于react提供两个API，renderToString和renderToStaticMarkup，主要讲react component转换成HTML字符串。区别是renderToString会在生成的HTML带额外属性，data-react-id，第一个DOM会有data-checksum属性，避免客户端重复渲染。
+参考链接[http://www.alloyteam.com/2017/01/react-from-scratch-server-render/](http://www.alloyteam.com/2017/01/react-from-scratch-server-render/)
+
