@@ -17,17 +17,20 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">
+            <FormattedMessage
+              id="hello"
+            />
+          </h1>
         </header>
         <p className="App-intro">
-
-        <FormattedMessage
-          id="intl.name"
-          values={{name: <b>{'carroll'}</b>}}
-           />
+          <FormattedMessage
+            id="name"
+            values={{ name: <b>{'carroll'}</b> }}
+          />
         </p>
         <button onClick={() => this.changeLanguage()}>{locale === 'zh' ? '切换英文' : 'change chinese'}</button>
-        
+
       </div>
     );
   }
