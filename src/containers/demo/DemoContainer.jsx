@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onClick: (id) => dispatch(actions.getDemo(id))
+  onClick: (id) => dispatch(actions.getDemo(id)),
+  nextClickAfter3s: () => dispatch(actions.wait3s())
 });
 
 export default connect(

@@ -16,7 +16,7 @@ export const fetch = (url, params, method) => {
 
     ajx.then(res => {
 
-      if (String(res.data.errorInfo.code === '401')) {
+      if (String(res.data.errorInfo.code) === '401') {
         alert('没有权限访问');
       } else if (String(res.data.errorInfo.code) === '200') {
         resolve(res.data);
