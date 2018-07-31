@@ -3,7 +3,7 @@ import { call, put, take, takeEvery } from 'redux-saga/effects';
 import API from '../utils/api.js';
 
 
-function* getDeom(action) {
+function* getDemo(action) {
   const api = function () {
     return API.getDemo(action.payload).then(res => {
       return res.data;
@@ -20,7 +20,7 @@ function* getDeom(action) {
 }
 
 function* rootSage() {
-  yield takeEvery(types.SAGA_DEMO, getDeom);
+  yield takeEvery(types.SAGA_DEMO, getDemo);
 }
 
 export default rootSage;
